@@ -1,0 +1,17 @@
+title: ML Engineer Learning Journey
+description: Documenting my path to becoming a better ML engineer — one concept at a time.
+author: Harris Maung
+
+# Update these with your GitHub username and repo name before enabling GitHub Pages
+# url: "https://YOUR_GITHUB_USERNAME.github.io"
+# baseurl: "/ml-engineer-learning"
+
+theme: minima
+minima:
+  skin: classic
+
+show_excerpts: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
