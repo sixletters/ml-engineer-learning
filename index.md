@@ -28,14 +28,12 @@ This is a public learning log — notes, exercises, and reflections as I go.
 
 ---
 
-## Roadmap Timeline
+## The Journey
 
-- **Month 1-2** — Python internals + ML fundamentals + Visualization project
-- **Month 2-3** — Spark deep-dive + MLflow
-- **Month 3-4** — Recommendation systems foundations
-- **Month 4-5** — Feature Pipeline + Recommender projects
-- **Month 5-6** — PyTorch + two-tower models + Real-time ranking
-- **Month 6-7** — Designing ML Systems + Mini ML Platform
-- **Month 7+** — LLM engineering + open source contributions
+I'm starting from a solid software engineering background — Databricks, pipelines, automations — but ML engineering is a different discipline. This blog documents the gaps I'm closing and the things I'm building along the way.
+
+The plan is roughly split into phases. First, getting the foundations locked in: Python internals, the math behind ML, and classical machine learning. Then moving into the specialist territory — recommendation systems, production ML infrastructure, and eventually deep learning and LLM engineering. Each section builds on the last, and every concept gets a hands-on exercise before I move on.
+
+[Projects](projects/) are the real test. The goal is to have a portfolio of end-to-end systems — not notebooks, but properly structured packages with tests, experiment tracking, and documented design decisions. The kind of thing you'd actually put in front of a team.
 
 ---

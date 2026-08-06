@@ -19,6 +19,39 @@ my-project/
 
 ## Tier 1 — Foundation
 
+### Project: SQL Engine from Scratch
+
+Building a SQL engine is the fastest way to understand what actually happens when a query runs — why indexes matter, how joins work, what a query plan is, and why `EXPLAIN ANALYZE` looks the way it does. This replaces the standard "do 50 SQL exercises" approach with something that forces deep understanding.
+
+**Tech stack:** Python only — no SQL libraries, no database drivers. The point is to implement it yourself.
+
+**What to build (in order):**
+
+1. **Tokenizer** — break a SQL string into typed tokens (keyword, identifier, literal, operator, punctuation)
+2. **Parser** — recursive descent parser producing an AST for `SELECT`, `FROM`, `WHERE`, `JOIN`, `GROUP BY`, `ORDER BY`, `LIMIT`
+3. **In-memory storage** — load CSV files into row-oriented tables, support basic schema inference
+4. **Sequential scan + filter** — execute `SELECT * FROM t WHERE x > 5` end-to-end
+5. **Projection** — evaluate column expressions, aliases, and `SELECT *`
+6. **Nested loop join** — get two-table joins working correctly before optimising
+7. **Hash join** — replace the inner loop with a hash table, benchmark against nested loop on 100K rows
+8. **Hash aggregation** — `GROUP BY` with `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`
+9. **Sort + `ORDER BY` / `LIMIT`**
+10. **B-tree index** — build an index on a column, add index scan to the planner, measure full scan vs index lookup on 1M rows
+11. **`EXPLAIN`** — print the chosen query plan before executing it
+
+**Stretch goals:**
+- Window functions: `ROW_NUMBER`, `RANK`, `LAG`, `LEAD` with frame logic
+- Basic cost-based optimizer: push filters below joins, pick index scan over full scan based on selectivity estimates
+- Write-ahead log (WAL) — append-only log for durability before in-memory state is committed
+
+**Why this over SQL exercises:** When you write `EXPLAIN ANALYZE` on a real Postgres query and see "Hash Join" or "Index Scan" in the output, you'll know exactly what's happening — because you built it.
+
+**Key skills:** Parsing, tree traversal, algorithm selection, data structures (B-tree, hash maps), performance measurement
+
+**Status:** Not started
+
+---
+
 ### Project 0: ML Math Visualization Platform
 
 Implement ML mathematical foundations from scratch and visualise them interactively. Build alongside Month 1-2.
